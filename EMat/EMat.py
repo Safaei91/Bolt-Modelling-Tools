@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 from scipy.optimize import fsolve
 
 def eMat(E, Fy, Fu, Fr, eps_yp, eps_u, eps_f, b_list=None, n_list=[1, 1, 1], strain_hist=None, type="eng"):
@@ -54,7 +53,7 @@ def eMat(E, Fy, Fu, Fr, eps_yp, eps_u, eps_f, b_list=None, n_list=[1, 1, 1], str
 
     # Generate strain history if not provided
     if strain_hist is None:
-        strain = np.linspace(0, eps_f, int(1e4))  # Default strain range with 10,000 points
+        strain = np.linspace(0, eps_f, int(1e5))  # Default strain range with 10,000 points
     else:
         strain = np.array(strain_hist)
 
@@ -104,7 +103,7 @@ def eMat(E, Fy, Fu, Fr, eps_yp, eps_u, eps_f, b_list=None, n_list=[1, 1, 1], str
                         b_list.append(b)
                     else:
                         raise ValueError("Failed to calculate 'b' for true stress-strain.")
-                sigma = back_stress(e_adj, -D_sigma_f, e_f, b_list[2], n_list[2])
+                sigma = back_stress(e_adj, -D_sigma_f, e_f, b_list[2], 1.0)
                 stress.append(Fu + sigma)
 
     return np.array(stress), strain
