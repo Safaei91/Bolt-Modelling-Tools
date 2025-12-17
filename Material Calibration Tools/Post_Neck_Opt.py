@@ -11,8 +11,13 @@ from scipy.interpolate import interp1d
 from scipy.optimize import minimize
 import os
 import matplotlib.pyplot as plt
+#_______________________________________________________________________________________
+# Coupon Specimen Geometric Properties:
+geom_prop = {"L": 80, "r": 6.35, "D": 7.94, "B": 16.0, "T": 12.827, "W": 25.58, "G": 40,
+             "mesh_size": 1.0, "sec_type": "circ", "spec_type": "dog_bone"}
 
 
+#_______________________________________________________________________________________
 # This is the objective function to be minimized:
 def obj_func(Fr_mod_fac, params, SS_list, geom_prop):
     Fr_mod_fac = Fr_mod_fac[0]
@@ -120,9 +125,6 @@ def obj_func(Fr_mod_fac, params, SS_list, geom_prop):
     print("The current error is: " + str(error))
     return error
 
-geom_prop = {"L": 80, "r": 6.35, "D": 7.94, "B": 16.0, "T": 12.827, "W": 25.58, "G": 40,
-             "mesh_size": 1.0, "sec_type": "circ", "spec_type": "dog_bone"}
-
 SS_list = Pre_Neck_Opt.pno("Data")
 params = SS_list[0]
 bounds = [(0.0, 1.0)]  # Fr_mod_fac should be between 0.0 and 1.0
@@ -223,4 +225,5 @@ plt.legend(fontsize=14, loc="lower right")
 plt.tight_layout()
 plt.savefig("fig.pdf", format="pdf")
 # Display the plot
+
 plt.show()  
