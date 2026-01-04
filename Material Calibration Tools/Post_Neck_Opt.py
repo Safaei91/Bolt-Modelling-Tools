@@ -15,7 +15,17 @@ import matplotlib.pyplot as plt
 # Coupon Specimen Geometric Properties:
 geom_prop = {"L": 80, "r": 6.35, "D": 7.94, "B": 16.0, "T": 12.827, "W": 25.58, "G": 40,
              "mesh_size": 1.0, "sec_type": "circ", "spec_type": "dog_bone"}
-
+"""
+L          = total element length (mm)
+r          = fillet radius (mm)
+D          = gauge diameter for circular sections or gauge width for rectangular sections (mm)
+T          = thickness for rectangular sections only (mm)
+W          = end-grip diameter for circular sections or end-grip width for rectangular sections (mm)
+mesh_size  = mesh element size (mm)
+sec_type   = "circ" for circular sections and "rect" for rectangular sections
+spec_type  = "dog_bone" for sections with a reduced (narrowed) middle part
+             "prism" for prismatic sections with constant cross-section
+"""
 
 #_______________________________________________________________________________________
 # This is the objective function to be minimized:
@@ -227,3 +237,4 @@ plt.savefig("fig.pdf", format="pdf")
 # Display the plot
 
 plt.show()  
+
