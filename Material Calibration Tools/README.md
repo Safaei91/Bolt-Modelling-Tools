@@ -1,8 +1,8 @@
-#Ductile Fracture Calibration (Abaqus–Python)
+# Ductile Fracture Calibration_(Abaqus–Python)
 
-This code calibrates ductile fracture parameters of metallic materials using tensile coupon test data. It couples a constitutive material model with Abaqus finite element simulations and optimizes the rupture stress by minimizing the difference between experimental and simulated stress–strain curves.
+This code calibrates ductile fracture parameters of metallic materials using tensile coupon test data. It couples a constitutive material model with Abaqus finite-element simulations and optimizes the rupture stress by minimizing the difference between the experimental and simulated stress–strain curves.
 
-Key Inputs
+## Key Inputs
 
 Specimen geometry
 
@@ -24,11 +24,11 @@ sec_type : "circ" or "rect"
 
 spec_type : "dog_bone" or "prism"
 
-Experimental data
+## Experimental data
 
 Experimental stress–strain data are read automatically from the Data/ directory.
 
-What the Code Does
+## What the Code Does
 
 Builds a true stress–plastic strain material model
 
@@ -44,7 +44,7 @@ Computes rupture strain and reference strain
 
 Plots experimental and simulated curves
 
-Example
+## Example
 
 Define the specimen geometry and run:
 
