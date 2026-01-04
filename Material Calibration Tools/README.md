@@ -6,23 +6,23 @@ This code calibrates ductile fracture parameters of metallic materials using ten
 
 Specimen geometry
 
-L : total length (mm)
+- **L (float)** : total length (mm)
 
-r : fillet radius (mm)
+- **r (float)** : fillet radius (mm)
 
-D : gauge diameter (circular) or width (rectangular) (mm)
+- **D (float)** : gauge diameter (circular) or width (rectangular) (mm)
 
-T : thickness for rectangular sections (mm)
+- **T (float)** : thickness for rectangular sections (mm)
 
-W : end-grip diameter or width (mm)
+- **W (float)** : end-grip diameter or width (mm)
 
-G : gauge length (mm)
+- **G (float)** : gauge length (mm)
 
-mesh_size : mesh element size (mm)
+- **mesh_size (float)** : mesh element size (mm)
 
-sec_type : "circ" or "rect"
+- **sec_type (string)** : "circ" or "rect"
 
-spec_type : "dog_bone" or "prism"
+- **spec_type (string)**: "dog_bone" or "prism"
 
 ## Experimental data
 
@@ -30,19 +30,19 @@ Experimental stress–strain data are read automatically from the Data/ director
 
 ## What the Code Does
 
-Builds a true stress–plastic strain material model
+- Builds a true stress–plastic strain material model
 
-Runs an Abaqus coupon simulation
+- Runs an Abaqus coupon simulation
 
-Extracts force–displacement results
+- Extracts force–displacement results
 
-Converts results to engineering stress–strain
+- Converts results to engineering stress–strain
 
-Optimizes the rupture stress parameter
+- Optimizes the rupture stress parameter
 
-Computes rupture strain and reference strain
+- Computes rupture strain and reference strain
 
-Plots experimental and simulated curves
+- Plots experimental and simulated curves
 
 ## Example
 
