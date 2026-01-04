@@ -47,7 +47,7 @@ Experimental stress–strain data are read automatically from the Data/ director
 ## Example
 
 Define the specimen geometry and run:
-
+```python
 python main.py
-
+```
 The script automatically launches Abaqus, performs the optimization, and saves the results and comparison plot (fig.pdf).
