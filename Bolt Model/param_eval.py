@@ -158,4 +158,5 @@ def bolt_mbld(geom_prop, base_mat_prop, strip_mat_prop, mesh_size, target_disp=0
         plt.legend(fontsize=14, loc="lower right")
         plt.tight_layout()
         plt.savefig(f"fig_{job_num}.pdf")  # Save the figure as a PDF
-        # plt.show()  # Display the plot
+        plt.show()  # Display the plot
+
